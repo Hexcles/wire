@@ -23,7 +23,7 @@ import javax.inject.Singleton
 import misk.web.actions.WebAction
 
 @Singleton
-class WhiteboardGrpcAction : WebAction, WhiteboardWhiteboardBlockingServer {
+class WhiteboardGrpcAction : WebAction, WhiteboardBlockingServer {
   val clients = mutableListOf<Client>()
   val points = mutableListOf<Point>()
 
@@ -34,6 +34,10 @@ class WhiteboardGrpcAction : WebAction, WhiteboardWhiteboardBlockingServer {
     val client = Client(request, response)
     clients += client
     client.process()
+  }
+
+  override fun Echo(request: Point): Point {
+    return request
   }
 
   inner class Client(

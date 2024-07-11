@@ -58,4 +58,7 @@ message WhiteboardUpdate {
 service Whiteboard {
   rpc Whiteboard (stream WhiteboardCommand) returns (stream WhiteboardUpdate) {
   }
+
+  rpc Echo (Point) returns (Point) {
+  }
 }

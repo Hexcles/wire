@@ -42,7 +42,6 @@ wire {
   kotlin {
     rpcCallStyle = "blocking"
     rpcRole = "server"
-    singleMethodServices = true
   }
 }
 
