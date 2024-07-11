@@ -15,8 +15,8 @@
  */
 package com.squareup.wire.whiteboard
 
-import misk.config.Config
 import misk.web.WebConfig
+import wisp.config.Config
 
 data class WhiteboardConfig(
   val web: WebConfig,
